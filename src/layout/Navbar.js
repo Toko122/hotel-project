@@ -44,7 +44,7 @@ const Navbar = () => {
           <Link
             key={i}
             to={link.path}
-            className={`group flex flex-col text-[18px] gap-0.5 ${isScrolled ? "text-gray-700" : "text-white"} ${isRoom ? "invert" : ""}`}
+            className={`group flex flex-col text-[18px] gap-0.5 ${isScrolled ? "text-gray-600" : "text-white"} ${isHotels ? "invert" : ""} ${isRoom ? "invert" : ""}`}
           >
             {link.name}
             <div className={`${isScrolled ? "bg-gray-700" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300`} />

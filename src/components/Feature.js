@@ -8,7 +8,7 @@ const Feature = () => {
     const navigate = useNavigate()
 
   return (
-    <div className='flex bg-[#F6F9FC] flex-col gap-16 justify-center items-center py-16 px-16'>
+    <div className='flex bg-[#F6F9FC] flex-col gap-16 justify-center items-center py-16 px-12'>
        
        <div className='flex flex-col gap-4 md:gap-8 justify-center md:items-center'>
           <h1 className='md:text-5xl text-3xl font-medium'>Featured Hotels</h1>

@@ -10,7 +10,7 @@ const HotelCard = ({ room, index }) => {
        
       {index % 2 === 0 && <p className='px-3 py-1 absolute top-3 left-3 text-xs bg-white text-gray-800 font-medium rounded-full'>Best Seller</p>}
 
-       <div className='md:p-4 p-2 pt-5'>
+       <div className='md:p-4 p-3 pt-5'>
             <div className='flex items-center md:justify-between justify-start md:gap-0 gap-4'>
               <p className='md:text-xl text-[15px] font-medium text-gray-800'>{room.hotel.name}</p>
             

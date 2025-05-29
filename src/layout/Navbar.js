@@ -7,7 +7,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Hotels', path: '/hotels' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Experiences', path: '/experiences' },
     { name: 'About', path: '/about' },
   ]
 
@@ -19,6 +19,7 @@ const Navbar = () => {
 
   const location = useLocation()
   const isHotels = location.pathname === '/hotels'
+  const isAbout = location.pathname === '/about'
   const isRoom = location.pathname.startsWith('/room/')
 
   useEffect(() => {
@@ -31,11 +32,11 @@ const Navbar = () => {
   }, [])
 
   return (
-    <nav className={`${isHotels ? "shadow" : ""} ${isRoom ? "shadow" : ""} fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"}`}>
+    <nav className={`${isHotels ? "shadow" : ""} ${isRoom ? "shadow" : ""} fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-150 ${isScrolled ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"}`}>
 
       {/* Logo */}
       <Link to="/" className="flex items-center gap-2">
-        <img src={assets.logo} alt="logo" className={`h-9 ${isScrolled || isHotels ? "invert opacity-80" : ""} ${isRoom ? "invert" : ""}`} />
+        <img src={assets.logo} alt="logo" className={`h-9 ${isScrolled || isHotels || isAbout ? "invert opacity-80" : ""} ${isRoom ? "invert" : ""}`} />
       </Link>
 
       {/* Desktop Navigation */}
@@ -44,7 +45,8 @@ const Navbar = () => {
           <Link
             key={i}
             to={link.path}
-            className={`group flex flex-col text-[18px] gap-0.5 ${isScrolled ? "text-gray-600" : "text-white"} ${isHotels ? "invert" : ""} ${isRoom ? "invert" : ""}`}
+            onClick={window.scrollTo(0,0)}
+            className={`group flex flex-col text-[18px] gap-0.5 ${isScrolled ? "text-gray-600" : "text-white"} ${isHotels || isAbout ? "invert" : ""} ${isRoom ? "invert" : ""}`}
           >
             {link.name}
             <div className={`${isScrolled ? "bg-gray-700" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300`} />
